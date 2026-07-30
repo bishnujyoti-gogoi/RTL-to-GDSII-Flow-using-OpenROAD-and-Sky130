@@ -14,7 +14,7 @@
 # 🖼️ Final GDSII Layout
 
 <p align="center">
-<img src="Images/gds_layout.png" width="850">
+<img src="Images/final_layout.png" width="850">
 </p>
 
 ---
