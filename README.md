@@ -1,4 +1,4 @@
-# ⚙️ RTL-to-GDSII Flow using OpenROAD and Sky130
+# ⚙️ RTL-to-GDSII ASIC Physical Design Flow using OpenROAD & Sky130
 
 ![OpenROAD](https://img.shields.io/badge/OpenROAD-EDA-blue)
 ![Sky130](https://img.shields.io/badge/Sky130-PDK-green)
@@ -7,47 +7,36 @@
 ![ASIC](https://img.shields.io/badge/ASIC-Physical%20Design-red)
 ![License](https://img.shields.io/badge/License-MIT-success)
 
-> A complete **RTL-to-GDSII ASIC Physical Design Flow** implemented using the **OpenROAD Toolchain** and **SkyWater 130nm (Sky130) PDK** as part of the **"VLSI Design Using Open Source Tools"** workshop organized by **Girijananda Chowdhury University** in association with **NiNE Labs, IIT Guwahati**.
+> Documentation of a complete **RTL-to-GDSII ASIC Physical Design Flow** performed using the **OpenROAD Toolchain** and **SkyWater 130nm (Sky130) Process Design Kit** during the **"VLSI Design Using Open Source Tools"** workshop.
 
 ---
 
-# 🖼️ Final GDSII Layout
+# 🖼️ Final Layout
 
 <p align="center">
-<img src="Images/final_layout.png" width="850">
+<img src="Images/final_layout.png" width="900">
 </p>
 
 ---
 
 # 📖 Project Overview
 
-This project demonstrates the complete RTL-to-GDSII ASIC implementation flow using modern open-source Electronic Design Automation (EDA) tools.
+This repository documents the implementation of a complete **RTL-to-GDSII ASIC Physical Design Flow** using the **OpenROAD** toolchain and **Sky130 Process Design Kit (PDK)**.
 
-The target design is a **32-bit synchronous up-counter**, which was implemented from RTL description to manufacturable GDSII layout using the OpenROAD physical design flow and Sky130 Process Design Kit (PDK).
+The project was completed during the **"VLSI Design Using Open Source Tools"** workshop organized by **Girijananda Chowdhury University** in association with **NiNE Labs, IIT Guwahati**.
 
-The project covers every major stage of ASIC implementation, including:
-
-- RTL Design
-- Design Configuration
-- Timing Constraints
-- Floorplanning
-- Placement
-- Clock Tree Synthesis (CTS)
-- Routing
-- Static Timing Analysis (STA)
-- Power Analysis
-- GDSII Generation
+A workshop-provided **32-bit synchronous up-counter RTL design** was used as the input design. The primary objective of this project was to understand and execute the complete ASIC physical design workflow—from RTL input to final GDSII layout—using open-source EDA tools.
 
 ---
 
 # 🎯 Objectives
 
-- Learn the complete RTL-to-GDSII ASIC design flow.
-- Perform physical implementation using OpenROAD.
-- Use SkyWater130 open-source PDK.
-- Generate timing, area and power reports.
-- Perform routing using multi-metal layers.
-- Generate the final GDSII layout.
+- Learn the complete RTL-to-GDSII ASIC implementation flow.
+- Understand ASIC physical design using OpenROAD.
+- Configure and execute the OpenROAD flow.
+- Apply timing constraints.
+- Generate timing, area, and power reports.
+- Produce the final manufacturable GDSII layout.
 
 ---
 
@@ -55,24 +44,26 @@ The project covers every major stage of ASIC implementation, including:
 
 - OpenROAD
 - SkyWater130 (Sky130) PDK
-- Verilog HDL
 - Ubuntu Linux
+- Verilog HDL (Workshop-provided RTL)
 - OpenSTA
 - TCL
 - ASIC Physical Design Flow
 
 ---
 
-# 🔄 RTL-to-GDSII Design Flow
+# 🔄 ASIC Design Flow
 
 ```text
-RTL Design (Verilog)
+Workshop RTL (Verilog)
         │
         ▼
-Configuration (config.mk)
+Configuration
+(config.mk)
         │
         ▼
-Timing Constraints (constraint.sdc)
+Timing Constraints
+(constraint.sdc)
         │
         ▼
 Logic Synthesis
@@ -84,7 +75,7 @@ Floorplanning
 Placement
         │
         ▼
-Clock Tree Synthesis (CTS)
+Clock Tree Synthesis
         │
         ▼
 Global Routing
@@ -93,22 +84,22 @@ Global Routing
 Detailed Routing
         │
         ▼
-Static Timing Analysis
+Timing Analysis
         │
         ▼
 Power Analysis
         │
         ▼
-GDSII Layout Generation
+GDSII Layout
 ```
 
 ---
 
 # 💻 RTL Design
 
-The target design selected for implementation was a **32-bit synchronous up-counter**.
+The implementation uses a **32-bit synchronous up-counter** supplied as part of the workshop material.
 
-### RTL Code
+The workshop focused on understanding the ASIC implementation flow rather than developing the RTL design itself.
 
 <p align="center">
 <img src="Images/rtl_design.png" width="700">
@@ -116,12 +107,12 @@ The target design selected for implementation was a **32-bit synchronous up-coun
 
 ---
 
-# ⚙️ Configuration File
+# ⚙️ Configuration
 
 The configuration file defines:
 
 - Design Name
-- Sky130 Platform
+- Target Platform (Sky130)
 - RTL Path
 - Core Utilization
 - Placement Density
@@ -134,11 +125,9 @@ The configuration file defines:
 
 # ⏱️ Timing Constraints
 
-Timing constraints were defined using **constraint.sdc**.
+The timing constraint file defines:
 
-Configuration includes:
-
-- Clock Period = **10 ns**
+- Clock Period (10 ns)
 - Input Delay
 - Output Delay
 
@@ -148,36 +137,34 @@ Configuration includes:
 
 ---
 
-# 🚀 OpenROAD Flow Execution
+# 🚀 OpenROAD Execution
 
-The OpenROAD flow was executed through the following stages:
+The complete ASIC implementation flow was executed through the following stages:
 
-1. RTL Reading
-2. Timing Constraint Application
-3. Logic Synthesis
-4. Floorplanning
-5. Placement
-6. Clock Tree Synthesis
-7. Global Routing
-8. Detailed Routing
-9. GDSII Generation
-
-### OpenROAD Execution
+- RTL Import
+- Timing Constraint Application
+- Logic Synthesis
+- Floorplanning
+- Placement
+- Clock Tree Synthesis (CTS)
+- Global Routing
+- Detailed Routing
+- GDSII Generation
 
 <p align="center">
-<img src="Images/execution1.png" width="800">
+<img src="Images/execution1.png" width="850">
 </p>
 
 <p align="center">
-<img src="Images/execution2.png" width="800">
+<img src="Images/execution2.png" width="850">
 </p>
 
 <p align="center">
-<img src="Images/execution3.png" width="800">
+<img src="Images/execution3.png" width="850">
 </p>
 
 <p align="center">
-<img src="Images/execution4.png" width="800">
+<img src="Images/execution4.png" width="850">
 </p>
 
 ---
@@ -200,9 +187,7 @@ The OpenROAD flow was executed through the following stages:
 
 ---
 
-# 📏 Area Report
-
-The implementation successfully generated the physical layout along with design area and core utilization information.
+# 📏 Design Area & Core Utilization
 
 <p align="center">
 <img src="Images/area_report.png" width="750">
@@ -230,8 +215,6 @@ The implementation successfully generated the physical layout along with design 
 
 # ⚡ Capacitance Analysis
 
-The design was analyzed for maximum capacitance during timing verification.
-
 <p align="center">
 <img src="Images/capacitance_report.png" width="750">
 </p>
@@ -240,7 +223,7 @@ The design was analyzed for maximum capacitance during timing verification.
 
 # 🔋 Power Analysis
 
-Power consumption and clock period information generated by OpenROAD.
+Clock period and power consumption obtained after physical implementation.
 
 <p align="center">
 <img src="Images/power_report.png" width="750">
@@ -248,9 +231,9 @@ Power consumption and clock period information generated by OpenROAD.
 
 ---
 
-# 🧩 Final GDSII Layout
+# 🧩 Generated GDSII Layout
 
-Generated GDSII layout after complete RTL-to-GDSII implementation.
+Final GDSII layout generated after successful completion of the OpenROAD flow.
 
 <p align="center">
 <img src="Images/gds_layout.png" width="850">
@@ -291,31 +274,42 @@ RTL-to-GDSII-Flow-using-OpenROAD-and-Sky130
 
 ---
 
-# 📚 Skills Gained
+# 📚 Skills Demonstrated
 
-- RTL Design using Verilog HDL
-- ASIC Physical Design Flow
 - OpenROAD Toolchain
-- Sky130 Process Design Kit
-- Static Timing Analysis (STA)
+- ASIC Physical Design Flow
+- Sky130 PDK
+- Linux-based EDA Workflow
 - Floorplanning
 - Placement
-- Clock Tree Synthesis
-- Routing
+- Clock Tree Synthesis (CTS)
+- Global & Detailed Routing
+- Static Timing Analysis (STA)
+- Timing Report Interpretation
+- Area Analysis
 - Power Analysis
 - GDSII Layout Generation
-- Linux-based EDA Workflow
 
 ---
 
-# 🔮 Future Improvements
+# 📝 Project Note
 
-- Implement larger digital designs (ALU, RISC-V Core, FIFO, etc.)
-- Perform Design Rule Check (DRC)
-- Perform Layout Versus Schematic (LVS)
-- Explore timing optimization techniques
-- Compare different standard-cell libraries
-- Implement low-power ASIC design techniques
+This project was completed during the **"VLSI Design Using Open Source Tools"** workshop.
+
+The workshop provided a reference **32-bit synchronous up-counter RTL design**, allowing participants to focus on learning and executing the complete RTL-to-GDSII physical design flow using OpenROAD and the Sky130 PDK.
+
+The emphasis of this project was on understanding ASIC implementation, timing analysis, routing, physical design, and layout generation rather than RTL development.
+
+---
+
+# 🔮 Future Learning Goals
+
+- Learn Verilog HDL in depth
+- Develop original RTL designs
+- Perform DRC and LVS verification
+- Explore OpenLane flow
+- Implement larger digital circuits
+- Learn low-power ASIC design techniques
 
 ---
 
@@ -323,14 +317,14 @@ RTL-to-GDSII-Flow-using-OpenROAD-and-Sky130
 
 This project was completed as part of the workshop:
 
-**"VLSI Design Using Open Source Tools"**
+**VLSI Design Using Open Source Tools**
 
-Organized by:
+Organized by
 
 - Girijananda Chowdhury University
 - NiNE Labs, IIT Guwahati
 
-Sponsored by:
+Sponsored by
 
 - Ministry of Electronics & Information Technology (MeitY), Government of India
 
@@ -344,7 +338,7 @@ B.Tech – Electronics & Telecommunication Engineering
 
 Jorhat Institute of Science & Technology
 
-📧 Email: **bishnujyotigogoi01@gmail.com**
+📧 Email: bishnujyotigogoi01@gmail.com
 
 🔗 GitHub: https://github.com/bishnujyoti-gogoi
 
@@ -362,4 +356,4 @@ The complete workshop report is available in the **Report** folder.
 
 This project is licensed under the **MIT License**.
 
-⭐ If you found this project useful, consider starring the repository.
+⭐ If you found this repository useful, consider giving it a star.
